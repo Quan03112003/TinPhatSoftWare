@@ -1,0 +1,24 @@
+<div class="contact-form-container">
+      <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="contact-form">
+        
+        <input type="text" name="name" [(ngModel)]="formData.name" placeholder="Họ tên" required />
+        
+        <input type="email" name="email" [(ngModel)]="formData.email" placeholder="Email" required />
+        
+        <input type="text" name="phone" [(ngModel)]="formData.phone" placeholder="Số điện thoại" />
+        
+        <select name="service" [(ngModel)]="formData.service" required>
+          <option value="" disabled selected>Chọn dịch vụ</option>
+          <option *ngFor="let s of services" [value]="s.id">{{ s.name }}</option>
+        </select>
+        
+        <textarea name="message" [(ngModel)]="formData.message" placeholder="Nội dung liên hệ" required></textarea>
+        
+        <button type="submit" [disabled]="isSubmitting">
+          {{ isSubmitting ? 'Đang gửi...' : 'Gửi' }}
+        </button>
+        
+        <p *ngIf="isSuccess" class="submit-message success">✅ {{ submitMessage }}</p>
+        <p *ngIf="isError" class="submit-message error">❌ {{ submitMessage }}</p>
+      </form>
+    </div>
