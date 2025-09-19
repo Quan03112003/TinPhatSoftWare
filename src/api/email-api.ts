@@ -72,7 +72,7 @@ export async function sendEmailAPI(emailData: EmailRequest): Promise<EmailRespon
 // Hàm gửi email thông báo đến admin
 export async function sendAdminNotification(emailData: EmailRequest): Promise<EmailResponse> {
   const adminEmailData: EmailRequest = {
-    to_email: 'quan0966995453@gmail.com', // Email của bạn
+    to_email: 'Hanhthuy.cpa@gmail.com', // Email của bạn
     from_name: 'Tín Phát Website',
     from_email: 'noreply@tinphat.com.vn',
     phone: 'System',

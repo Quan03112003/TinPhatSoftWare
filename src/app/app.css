@@ -24,6 +24,7 @@ body {
 
 /* Header */
 .header {
+
   position: fixed;
   top: 0;
   width: 100%;
@@ -51,6 +52,10 @@ body {
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 0.2rem;
+ 
+}
+.nav-logo h2 a{
+   text-decoration: none;
 }
 
 .nav-logo span {
@@ -58,7 +63,9 @@ body {
   font-size: 0.9rem;
   font-weight: 400;
 }
-
+.nav-logo span a{
+   text-decoration: none;
+}
 .nav-menu {
   display: flex;
   list-style: none;
@@ -362,7 +369,14 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
-
+.product-card h3{
+  text-align: center;
+  font-size: 25px;
+}
+.product-card p{
+  text-align: center;
+  font-size: 16px;
+}
 .product-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
@@ -511,6 +525,88 @@ body {
   text-align: center;
   color: #94a3b8;
 }
+/* Floating Buttons */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.floating-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  animation: shake 1s infinite;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.zalo-button {
+  background: #0068ff;
+}
+
+.phone-button {
+  background: #2ecc71;
+}
+
+.icon-image {
+  width: 35px;
+  height: 35px;
+}
+
+.fa-phone {
+  color: white;
+  font-size: 24px;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(-10deg); }
+  20% { transform: rotate(10deg); }
+  30% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.floating-button:hover {
+  animation: none;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}/* Phone button styles */
+.phone-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.phone-number {
+  position: absolute;
+  right: 70px;
+  background: #2ecc71;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.phone-button:hover + .phone-number,
+.phone-button:focus + .phone-number {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile specific styles */
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -562,29 +658,34 @@ body {
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 15px;
+  .floating-buttons {
+    bottom: 10px;
+    right: 10px;
+    gap: 8px;
   }
-  
-  .hero-content h1 {
-    font-size: 2rem;
+  .floating-button {
+    width: 56px;
+    height: 56px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    animation: shake-mobile 0.7s infinite;
   }
-  
-  .hero-content p {
-    font-size: 1rem;
+  .icon-image {
+    width: 32px;
+    height: 32px;
   }
-  
-  .btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
+  .fa-phone {
+    font-size: 22px;
   }
-  
-  .service-card,
-  .product-card {
-    padding: 1.5rem;
+  .phone-number {
+    display: none;
   }
-  
-  .contact-form {
-    padding: 1.5rem;
-  }
+}
+
+@keyframes shake-mobile {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
 }

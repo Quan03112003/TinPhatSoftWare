@@ -50,7 +50,7 @@ export class EmailJSContactFormComponent {
         'service_jirdb8h',   // Service ID
         'template_s6a2gyf',  // Template ID
         {
-          to_email: 'quan0966995453@gmail.com',
+          to_email: 'Hanhthuy.cpa@gmail.com',
           from_name: this.formData.name,
           from_email: this.formData.email,
           phone: this.formData.phone,
