@@ -32,14 +32,20 @@ export class EmailJSContactFormComponent {
   isSuccess = false;
   isError = false;
   submitMessage = '';
-
+  private isValidEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
   async onSubmit() {
     if (!this.formData.name || !this.formData.email || !this.formData.service || !this.formData.message) {
       this.isError = true;
       this.submitMessage = 'Vui lòng điền đầy đủ thông tin!';
       return;
     }
-
+    if (!this.isValidEmail(this.formData.email)) {
+    this.isError = true;
+    this.submitMessage = 'Email không hợp lệ!';
+    return;
+  }
     this.isSubmitting = true;
     this.isError = false;
     this.isSuccess = false;
