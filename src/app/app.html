@@ -8,13 +8,16 @@
         <span><a href="#home">1C & Kế toán Quản trị</a></span>
        
       </div>
-      <ul class="nav-menu">
+      <ul class="nav-menu" [class.open]="isMenuOpen">
         <li><a href="#home">Trang chủ</a></li>
         <li><a href="#about">Giới thiệu</a></li>
         <li><a href="#services">Dịch vụ</a></li>
         <li><a href="#products">Sản phẩm</a></li>
         <li><a href="#contact">Liên hệ</a></li>
       </ul>
+      <button class="nav-toggle" aria-label="Mở menu" (click)="isMenuOpen = !isMenuOpen">
+    <i class="fas fa-bars"></i>
+  </button>
     </div>
   </nav>
 </header>
@@ -36,6 +39,8 @@
         <div class="tech-card">💰 Kế toán Quản trị</div>
         <div class="tech-card">🔧 Lowcode Development</div>
         <div class="tech-card">📈 Báo cáo Tài chính</div>
+        <div class="tech-card">🛠️ Hỗ trợ & Bảo trì</div>
+        <div class="tech-card">🏗️ Hệ thống xây dựng</div>
       </div>
     </div>
   </div>

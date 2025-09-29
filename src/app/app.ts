@@ -10,4 +10,5 @@ import { EmailJSContactFormComponent } from '../emailjs-contact-form/emailjs-con
 })
 export class App {
   protected readonly title = signal('Tín Phát Software');
+  isMenuOpen = false;
 }

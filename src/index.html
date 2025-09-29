@@ -6,11 +6,37 @@
  
   <meta name="description" content="Công ty cổ phần phần mềm Tín Phát - Chuyên cung cấp giải pháp phần mềm chất lượng cao">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
 </head>
 <body>
   <app-root></app-root>
   <app-emailjs-contact-form></app-emailjs-contact-form>
+  <script>
+ // Chặn F12, Ctrl+Shift+I, Ctrl+U
+  document.addEventListener("keydown", function(e) {
+    if (e.keyCode == 123 || // F12
+        (e.ctrlKey && e.shiftKey && e.keyCode == 73) || // Ctrl+Shift+I
+        (e.ctrlKey && e.keyCode == 85)) { // Ctrl+U
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // Chặn chuột phải
+  document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+  });
+ 
+  // Phát hiện DevTools
+  setInterval(function() {
+    if (window.outerHeight - window.innerHeight > 200 ||
+        window.outerWidth - window.innerWidth > 200) {
+      alert("Không được mở DevTools!");
+      window.location.href = "about:blank"; 
+    }
+  }, 1000);
+// </script>
+  
 </body>
 </html>
